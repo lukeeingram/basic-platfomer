@@ -3,4 +3,4 @@ The goal at the end is to have a working example with a fully-featured game loop
 
 
 Current progress can be played here:
-[!][Basic platformer example](https://lukeeingram.com/godot-example/)
+[Basic platformer example](https://lukeeingram.com/godot-example/)
