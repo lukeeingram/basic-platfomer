@@ -42,6 +42,7 @@ layer = -100
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_scale = Vector2( 2.12372, 0.947814 )
 texture = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
