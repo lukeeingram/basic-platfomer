@@ -1,18 +1,26 @@
 extends Actor
+class_name Player
 
 export var stomp_impulse := 1000.0
 
-func _on_StompDetector_area_entered(area: Area2D) -> void:
-	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
-
-func _on_EnemyDetector_body_entered(body: Node) -> void:
+func _on_EnemyDetector_body_entered(_body: Node) -> void:
 	queue_free()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var is_jump_interrupted := Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
-	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)	
+	var snap := Vector2.DOWN * 80.0 if direction.y == 0.0 else Vector2.ZERO
+	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true, 4, PI / 3)
+	
+	for i in get_slide_count():
+		var collision := get_slide_collision(i)
+		var collider := collision.collider
+		var is_stomping := (collider is Enemy and is_on_floor() and collision.normal.is_equal_approx(Vector2.UP))
+		
+		if is_stomping:
+			_velocity.y = -stomp_impulse
+			(collider as Enemy).kill()
 
 func get_direction() -> Vector2:
 	return Vector2(
