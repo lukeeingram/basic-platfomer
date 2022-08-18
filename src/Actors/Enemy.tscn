@@ -7,7 +7,7 @@
 extents = Vector2( 43.5, 39.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43, 12 )
+extents = Vector2( 55.5, 9.4375 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -35,7 +35,7 @@ position = Vector2( 0, -69 )
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0, -18 )
+position = Vector2( 0, -11.5625 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
