@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/bumper.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.18087
+height = 51.4439
+
+[node name="Bumper" type="Area2D"]
+collision_layer = 16
+
+[node name="Bumper" type="Sprite" parent="."]
+position = Vector2( 0, -39 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.01492e-12, -42 )
+rotation = 1.57079
+scale = Vector2( -3.39757, 1.6613 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, -63 )
+polygon = PoolVector2Array( -50, 7, -26, -10, -13, -14, 0, -14, 12, -14, 27, -10, 49, 7 )
