@@ -33,7 +33,12 @@ speed = Vector2( 300, 1500 )
 gravity = 5000.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
-position = Vector2( 3814, 964 )
+position = Vector2( 1501, 868 )
+speed = Vector2( 300, 1500 )
+gravity = 5000.0
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 3815, 961 )
 speed = Vector2( 300, 1500 )
 gravity = 5000.0
 
