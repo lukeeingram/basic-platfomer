@@ -36,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 708.479, 731.71 )
 texture = ExtResource( 4 )
+expand = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
