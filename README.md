@@ -8,6 +8,7 @@ Current progress can be played here:
 Controls: 
 - WASD or arrow keys to move the character
 - W or the up arrow makes the character jump
+- P or Escape to pause the game
 
 You can goomba stomp the enemies to kill them and reach new heights!
 
