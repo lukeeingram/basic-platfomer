@@ -12,6 +12,5 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL).y
 	
 
-
 func kill() -> void:
 	queue_free()
