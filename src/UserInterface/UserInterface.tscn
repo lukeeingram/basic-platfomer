@@ -54,7 +54,7 @@ margin_bottom = 100.0
 margin_right = 396.0
 margin_bottom = 74.0
 
-[node name="ChangeSceneButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 3 )]
+[node name="MainScreenButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 3 )]
 margin_top = 82.0
 margin_right = 396.0
 margin_bottom = 156.0
