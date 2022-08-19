@@ -4,7 +4,7 @@ class_name Player
 export var stomp_impulse := 1000.0
 
 func _on_EnemyDetector_body_entered(_body: Node) -> void:
-	queue_free()
+	die()
 
 func _on_StompDetector_area_entered(_area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
@@ -44,3 +44,7 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	var out := linear_velocity
 	out.y = -impulse
 	return out
+
+func die() -> void:
+	PlayerData.deaths += 1
+	queue_free()

@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://src/UserInterface/QuitButton.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/UserInterface/PlayButton.gd" type="Script" id=6]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=7]
 
 [node name="EndScreen" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -22,10 +21,12 @@ expand = true
 stretch_mode = 2
 
 [node name="Title" parent="." instance=ExtResource( 7 )]
-margin_left = -321.0
-margin_top = 321.0
-margin_right = 318.0
-margin_bottom = 378.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -317.0
+margin_right = 494.0
+margin_bottom = -260.0
 text = "Congratulations, you finished the game!"
 
 [node name="Menu" type="VBoxContainer" parent="."]
@@ -33,28 +34,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -320.0
-margin_top = -56.0
-margin_right = 317.0
-margin_bottom = 100.0
+margin_left = -318.5
+margin_top = -59.0
+margin_right = 318.5
+margin_bottom = 97.0
 
-[node name="PlayButton" type="Button" parent="Menu" instance=ExtResource( 5 )]
+[node name="PlayButton" parent="Menu" instance=ExtResource( 5 )]
 margin_right = 637.0
 margin_bottom = 74.0
-size_flags_horizontal = 3
-size_flags_vertical = 2
 text = "Play Again"
-script = ExtResource( 6 )
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
-[node name="QuitButton" type="Button" parent="Menu" instance=ExtResource( 3 )]
+[node name="QuitButton" parent="Menu" instance=ExtResource( 3 )]
 margin_top = 82.0
 margin_right = 637.0
 margin_bottom = 156.0
-size_flags_horizontal = 3
-size_flags_vertical = 2
-text = "Quit"
-script = ExtResource( 2 )
 
-[connection signal="button_up" from="Menu/PlayButton" to="Menu/PlayButton" method="_on_button_up"]
-[connection signal="button_up" from="Menu/QuitButton" to="Menu/QuitButton" method="_on_button_up"]
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -318.0
+margin_top = -218.0
+margin_right = 483.0
+margin_bottom = -66.0
+rect_scale = Vector2( 0.8, 0.8 )
+text = "Your final score is: %s
+You died %d times"
+align = 1

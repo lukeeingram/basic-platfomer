@@ -1,6 +1,8 @@
 extends "res://src/Actors/Actor.gd"
 class_name Enemy
 
+export var score := 100
+
 func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x
@@ -13,3 +15,4 @@ func _physics_process(delta: float) -> void:
 	
 func kill() -> void:
 	queue_free()
+	PlayerData.score += score

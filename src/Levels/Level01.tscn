@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -7,11 +7,18 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/light.png" type="Texture" id=7]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=8]
 
 [node name="Level01" type="Node2D"]
 __meta__ = {
 "_edit_vertical_guides_": [ 4080.0, 5033.0, 3007.0, 3921.0 ]
 }
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 8 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -47,13 +54,13 @@ position = Vector2( 1916, 627 )
 position = Vector2( 2010, 627 )
 
 [node name="Coin24" parent="Coins" instance=ExtResource( 5 )]
-position = Vector2( 643, 663 )
+position = Vector2( 640, 802 )
 
 [node name="Coin25" parent="Coins" instance=ExtResource( 5 )]
-position = Vector2( 748, 583 )
+position = Vector2( 745, 722 )
 
 [node name="Coin26" parent="Coins" instance=ExtResource( 5 )]
-position = Vector2( 862, 535 )
+position = Vector2( 859, 674 )
 
 [node name="Coin21" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 3463, 602 )
